@@ -1,0 +1,40 @@
+﻿<Window x:Class="PizzaClient2.View.SizeAndQuantityView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:ignore="http://www.ignore.com"
+        mc:Ignorable="d ignore"
+        DataContext="{Binding ViewModelName, Source={StaticResource Locator}}"
+        Width="500"
+        Height="200"
+        Title="Select Quantity and Size">
+
+    <Grid>
+        <Grid.Background>
+            <ImageBrush Stretch="UniformToFill" AlignmentX="Right" AlignmentY="Top" ImageSource="pack://application:,,,/Resource/pizzadialog.jpg" Opacity="0.5"></ImageBrush>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Column="0" Grid.Row="0" VerticalAlignment="Center">
+            <Label Content="Please select size" HorizontalAlignment="Center"></Label>
+            <RadioButton Content="32 cm (Normal size)" GroupName="SizeGroup" Margin="10,0,0,0" Command="{Binding AdjustSizeCommand}" CommandParameter="32" IsChecked="True"></RadioButton>
+            <RadioButton Content="50 cm (Family size)" GroupName="SizeGroup" Margin="10,0,0,0" Command="{Binding AdjustSizeCommand}" CommandParameter="50"></RadioButton>
+        </StackPanel>
+        <StackPanel Grid.Column="1" Grid.Row="0" VerticalAlignment="Center">
+            <Label Content="How many would you like?" HorizontalAlignment="Center"></Label>
+            <TextBox Text="{Binding Quantity, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Center" Width="50"></TextBox>
+        </StackPanel>
+        <StackPanel Grid.Column="2" Grid.Row="0" VerticalAlignment="Center">
+            <Label Content="{Binding PriceHuf}" HorizontalAlignment="Center"></Label>
+            <Button Content="Add to Cart" Command="{Binding AddToCartCommand}" HorizontalAlignment="Center" Margin="0,5,0,5" Click="CloseDialog"></Button>
+            <Button Content="Cancel" HorizontalAlignment="Center" Click="CloseDialog"></Button>
+        </StackPanel>
+    </Grid>
+</Window>

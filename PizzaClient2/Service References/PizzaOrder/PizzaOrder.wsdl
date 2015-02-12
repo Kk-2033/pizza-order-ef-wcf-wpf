@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="PizzaOrder" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:4416/PizzaOrder.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:4416/PizzaOrder.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:4416/PizzaOrder.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/PizzaDAL.Entities" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IPizzaOrder_Register_InputMessage">
+    <wsdl:part name="parameters" element="tns:Register" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaOrder_Register_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaOrder_Login_InputMessage">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaOrder_Login_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaOrder_Logout_InputMessage">
+    <wsdl:part name="parameters" element="tns:Logout" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaOrder_Logout_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LogoutResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaOrder_GetAllPizzas_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllPizzas" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaOrder_GetAllPizzas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllPizzasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaOrder_GetAllToppings_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllToppings" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaOrder_GetAllToppings_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllToppingsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaOrder_GetPizzasPrice_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPizzasPrice" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaOrder_GetPizzasPrice_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPizzasPriceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaOrder_ProceedOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProceedOrder" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaOrder_ProceedOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProceedOrderResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IPizzaOrder">
+    <wsdl:operation name="Register">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaOrder/Register" message="tns:IPizzaOrder_Register_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaOrder/RegisterResponse" message="tns:IPizzaOrder_Register_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaOrder/Login" message="tns:IPizzaOrder_Login_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaOrder/LoginResponse" message="tns:IPizzaOrder_Login_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Logout">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaOrder/Logout" message="tns:IPizzaOrder_Logout_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaOrder/LogoutResponse" message="tns:IPizzaOrder_Logout_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPizzas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaOrder/GetAllPizzas" message="tns:IPizzaOrder_GetAllPizzas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaOrder/GetAllPizzasResponse" message="tns:IPizzaOrder_GetAllPizzas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllToppings">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaOrder/GetAllToppings" message="tns:IPizzaOrder_GetAllToppings_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaOrder/GetAllToppingsResponse" message="tns:IPizzaOrder_GetAllToppings_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPizzasPrice">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaOrder/GetPizzasPrice" message="tns:IPizzaOrder_GetPizzasPrice_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaOrder/GetPizzasPriceResponse" message="tns:IPizzaOrder_GetPizzasPrice_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProceedOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaOrder/ProceedOrder" message="tns:IPizzaOrder_ProceedOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaOrder/ProceedOrderResponse" message="tns:IPizzaOrder_ProceedOrder_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IPizzaOrder" type="tns:IPizzaOrder">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Register">
+      <soap:operation soapAction="http://tempuri.org/IPizzaOrder/Register" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <soap:operation soapAction="http://tempuri.org/IPizzaOrder/Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Logout">
+      <soap:operation soapAction="http://tempuri.org/IPizzaOrder/Logout" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPizzas">
+      <soap:operation soapAction="http://tempuri.org/IPizzaOrder/GetAllPizzas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllToppings">
+      <soap:operation soapAction="http://tempuri.org/IPizzaOrder/GetAllToppings" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPizzasPrice">
+      <soap:operation soapAction="http://tempuri.org/IPizzaOrder/GetPizzasPrice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProceedOrder">
+      <soap:operation soapAction="http://tempuri.org/IPizzaOrder/ProceedOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PizzaOrder">
+    <wsdl:port name="BasicHttpBinding_IPizzaOrder" binding="tns:BasicHttpBinding_IPizzaOrder">
+      <soap:address location="http://localhost:4416/PizzaOrder.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

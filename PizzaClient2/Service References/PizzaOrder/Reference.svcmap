@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="db07a2df-71ca-42ce-b077-ba15e8c0f0a5" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:4416/PizzaOrder.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="PizzaOrder.disco" MetadataType="Disco" ID="9f3e0563-666a-48e2-af02-679b44856fe2" SourceId="1" SourceUrl="http://localhost:4416/PizzaOrder.svc?disco" />
+    <MetadataFile FileName="PizzaOrder.xsd" MetadataType="Schema" ID="9521a667-83e5-466f-b0b8-8c9b67976ee2" SourceId="1" SourceUrl="http://localhost:4416/PizzaOrder.svc?xsd=xsd1" />
+    <MetadataFile FileName="PizzaOrder1.xsd" MetadataType="Schema" ID="5b6e9ac6-89eb-425c-a279-90471b3d24f4" SourceId="1" SourceUrl="http://localhost:4416/PizzaOrder.svc?xsd=xsd0" />
+    <MetadataFile FileName="PizzaOrder2.xsd" MetadataType="Schema" ID="4b5606cd-741b-4992-af5a-6eda477ac695" SourceId="1" SourceUrl="http://localhost:4416/PizzaOrder.svc?xsd=xsd2" />
+    <MetadataFile FileName="PizzaOrder.wsdl" MetadataType="Wsdl" ID="49ef076d-e773-486e-a808-e364c6f19d9c" SourceId="1" SourceUrl="http://localhost:4416/PizzaOrder.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
